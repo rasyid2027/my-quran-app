@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink, withRouter } from 'react-router-dom'
 
 class Navbar extends Component {
     render() {
@@ -7,23 +8,13 @@ class Navbar extends Component {
                 <div className="container">
                     <a  className="brand-logo">My Qur'an</a>
                     <ul className="right">
-                        <li><a href="">Surah</a></li>
-                        <li><a href="">Juz</a></li>
+                        <li><NavLink exact to="/" activeStyle={{background: '#00867b'}}>Home</NavLink></li>
+                        <li><NavLink to="/surah" activeStyle={{background: '#00867b'}}>Surah</NavLink></li>
                     </ul>
                 </div>
             </nav>
-            // <div className="container center">
-            //     <h2>Bismillahirrohmanirrohim</h2>
-            //     <form>
-            //         <div className="input-field col s12">
-            //             <i className="material-icons prefix">search</i>
-            //             <input type="text" id="search" className="validate"/>
-            //             <label htmlFor="search">Search Surah</label>
-            //         </div>
-            //     </form>
-            // </div>
         )
     }
 }
 
-export default Navbar
+export default withRouter(Navbar)
