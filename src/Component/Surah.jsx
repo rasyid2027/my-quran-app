@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class Surah extends Component {
     state = {
@@ -8,7 +9,6 @@ class Surah extends Component {
     componentDidMount() {
         axios.get('http://api.alquran.cloud/v1/quran/quran-uthmani')
             .then(res => {
-                console.log(res.data.data);
                 this.setState({
                     surahs: res.data.data.surahs
                 })
@@ -21,15 +21,17 @@ class Surah extends Component {
                 return (
                     <div className="surah card grey lighten-4" key={ surah.number }>
                         <div className="card-content">
-                            <div className="row">
-                                <div className="col s6">
-                                    <span className="card-title">{ surah.englishName }</span>
-                                    <span>( { surah.englishNameTranslation } )</span>
+                            <Link to={'/' + surah.number}>
+                                <div className="row">
+                                    <div className="col s6">
+                                        <span className="card-title">{ surah.englishName }</span>
+                                        <span>( { surah.englishNameTranslation } )</span>
+                                    </div>
+                                    <div className="col s6">
+                                        <h5 className='right'>{ surah.name }</h5>
+                                    </div>
                                 </div>
-                                <div className="col s6">
-                                    <h5 className='right'>{ surah.name }</h5>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 )
@@ -37,7 +39,7 @@ class Surah extends Component {
         ) : (
             // <h6 className="center">---</h6>
             <div className="center">
-                <div className="preloader-wrapper big active">
+                <div className="preloader-wrapper medium active">
                     <div className="spinner-layer spinner-blue">
                         <div className="circle-clipper left">
                         <div className="circle"></div>
@@ -71,7 +73,7 @@ class Surah extends Component {
                     <div className="spinner-layer spinner-green">
                         <div className="circle-clipper left">
                         <div className="circle"></div>
-                        </div><div className="gap-patch">
+                        </div><div className="gap-patch">                                                                                                                                                                                                                                                   
                         <div className="circle"></div>
                         </div><div className="circle-clipper right">
                         <div className="circle"></div>
