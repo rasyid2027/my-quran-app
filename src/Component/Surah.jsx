@@ -19,16 +19,16 @@ class Surah extends Component {
         const surahList = surahs.length ? (
             surahs.map(surah => {
                 return (
-                    <div className="surah card grey lighten-4" key={ surah.number }>
+                    <div className="card-panel grey lighten-4" key={ surah.number }>
                         <div className="card-content">
                             <Link to={'/' + surah.number}>
                                 <div className="row">
                                     <div className="col s6">
                                         <span className="card-title">{ surah.englishName }</span>
-                                        <span>( { surah.englishNameTranslation } )</span>
+                                        <span style={{display: 'block'}}>( { surah.englishNameTranslation } )</span>
                                     </div>
                                     <div className="col s6">
-                                        <h5 className='right'>{ surah.name }</h5>
+                                        <h6 className='right'>{ surah.name }</h6>
                                     </div>
                                 </div>
                             </Link>
@@ -83,8 +83,9 @@ class Surah extends Component {
 
             </div>
         )
+        
         return (
-            <div className="container">
+            <div className="surah container">
                 { surahList }
             </div>
         )
