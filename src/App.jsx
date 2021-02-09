@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './Component/Navbar'
 // import Header from './Component/Header'
 import Home from './Component/Home'
@@ -7,7 +7,7 @@ import Ayat from './Component/Ayat'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Navbar />
         {/* <Header /> */}
@@ -17,7 +17,7 @@ function App() {
           <Route path='/:path_id' component={Ayat} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
