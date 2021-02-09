@@ -24,17 +24,25 @@ class Ayat extends Component {
                     //         <p className="right">{ ayat.text }</p>
                     //     </div>
                     // </div>
-                    <ul className="collection" key={ ayat.number }>
-                        <p className="secondary-content left">( { ayat.numberInSurah } )</p>
-                        <li className="collection-item right">
-                            { ayat.text }
-                        </li>
-                    </ul>
+                    // <ul className="collection" key={ ayat.number }>
+                    //     <p className="secondary-content left">( { ayat.numberInSurah } )</p>
+                    //     <li className="collection-item right">
+                    //         { ayat.text }
+                    //     </li>
+                    // </ul>
+                    <div className="row white" key={ ayat.number }>
+                        <div className="col s11">
+                            <p className="right">{ ayat.text }</p>
+                        </div>
+                        <div className="col s1">
+                            <button className="btn-floating waves-effect waves-light btn left">{ ayat.numberInSurah }</button>
+                        </div>
+                    </div>
                 )
             })
         ) : (
-            <div className="center">
-                <div className="preloader-wrapper medium active">
+            <div className="center loading">
+                <div className="preloader-wrapper big active">
                     <div className="spinner-layer spinner-blue">
                         <div className="circle-clipper left">
                         <div className="circle"></div>
