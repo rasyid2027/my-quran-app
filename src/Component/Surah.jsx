@@ -4,15 +4,27 @@ import { Link } from 'react-router-dom'
 
 class Surah extends Component {
     state = {
+        fullSurah: [ ],
         surahs: [ ]
     }
     componentDidMount() {
         axios.get('http://api.alquran.cloud/v1/quran/quran-uthmani')
             .then(res => {
                 this.setState({
+                    fullSurah: res.data.data.surahs,
                     surahs: res.data.data.surahs
                 })
             })
+    }
+    handleSearch = (e) => {
+        e.preventDefault()
+        const surahs = this.state.fullSurah.filter(fullSurah => {
+            return fullSurah.englishName.toLowerCase().match(e.target.value)
+        })
+        this.setState({
+            ...this.state,
+            surahs: surahs
+        })
     }
     render() {
         const { surahs } = this.state
@@ -38,7 +50,7 @@ class Surah extends Component {
             })
         ) : (
             // <h6 className="center">---</h6>
-            <div className="center">
+            <div className="center loading">
                 <div className="preloader-wrapper medium active">
                     <div className="spinner-layer spinner-blue">
                         <div className="circle-clipper left">
@@ -86,6 +98,13 @@ class Surah extends Component {
         
         return (
             <div className="surah container">
+                <form>
+                    <div className="input-field col s12">
+                        <i className="material-icons prefix">search</i>
+                        <input type="text" id="search" className="validate" onKeyUp={ this.handleSearch } />
+                        <label htmlFor="search">Search Surah</label>
+                    </div>
+                </form>
                 { surahList }
             </div>
         )
