@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/my-quran-app/static/css/main.4f0afc58.chunk.css",
+    "main.js": "/my-quran-app/static/js/main.43662a49.chunk.js",
+    "main.js.map": "/my-quran-app/static/js/main.43662a49.chunk.js.map",
+    "runtime-main.js": "/my-quran-app/static/js/runtime-main.6d5288b9.js",
+    "runtime-main.js.map": "/my-quran-app/static/js/runtime-main.6d5288b9.js.map",
+    "static/js/2.8a86ad23.chunk.js": "/my-quran-app/static/js/2.8a86ad23.chunk.js",
+    "static/js/2.8a86ad23.chunk.js.map": "/my-quran-app/static/js/2.8a86ad23.chunk.js.map",
+    "static/js/3.01feee2a.chunk.js": "/my-quran-app/static/js/3.01feee2a.chunk.js",
+    "static/js/3.01feee2a.chunk.js.map": "/my-quran-app/static/js/3.01feee2a.chunk.js.map",
+    "index.html": "/my-quran-app/index.html",
+    "static/css/main.4f0afc58.chunk.css.map": "/my-quran-app/static/css/main.4f0afc58.chunk.css.map",
+    "static/js/2.8a86ad23.chunk.js.LICENSE.txt": "/my-quran-app/static/js/2.8a86ad23.chunk.js.LICENSE.txt",
+    "static/media/alquran.af82c370.png": "/my-quran-app/static/media/alquran.af82c370.png",
+    "static/media/index.css": "/my-quran-app/static/media/bckg2.64bd1adf.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d5288b9.js",
+    "static/js/2.8a86ad23.chunk.js",
+    "static/css/main.4f0afc58.chunk.css",
+    "static/js/main.43662a49.chunk.js"
+  ]
+}
